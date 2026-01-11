@@ -34,13 +34,13 @@ const Header = (props: Props) => {
       dropdownItems: [
         { label: "Sons Name", href: "#" },
         { label: "Wifes Name", href: "#" },
-        { label: "View Family Structure", href: "#" }
+        { label: "View Family Structure", href: "#" },
       ],
     },
     {
       label: "OVERVIEW",
       hasDropdown: false,
-      href: "#"
+      href: "/",
     },
     {
       label: "PORTFOLIO",
@@ -48,7 +48,7 @@ const Header = (props: Props) => {
       dropdownItems: [
         { label: "Investments", href: "#" },
         { label: "Life Insurance", href: "#" },
-        { label: "Short Term Insurance", href: "#" }
+        { label: "Short Term Insurance", href: "#" },
       ],
     },
     {
@@ -60,7 +60,7 @@ const Header = (props: Props) => {
         { label: "Retirement", href: "#" },
         { label: "Investment", href: "#" },
         { label: "Risk Management", href: "#" },
-        { label: "Estate Planning", href: "#" }
+        { label: "Estate Planning", href: "#" },
       ],
     },
     {
@@ -69,7 +69,7 @@ const Header = (props: Props) => {
       dropdownItems: [
         { label: "Assets & Liabilities", href: "#" },
         { label: "Income & Expenses", href: "#" },
-        { label: "Scenario Planning", href: "#" }
+        { label: "Scenario Planning", href: "#" },
       ],
     },
     {
@@ -82,30 +82,33 @@ const Header = (props: Props) => {
         { label: "Beneficiaries", href: "#" },
         { label: "Bank Accounts", href: "#" },
         { label: "Debit Orders", href: "#" },
-        { label: "Transfers", href: "#" }
+        { label: "Transfers", href: "#" },
       ],
     },
     {
       label: "ESTATE PLANNING",
       hasDropdown: false,
-      href: "#"
+      href: "#",
     },
     {
       label: "MANDATES",
       hasDropdown: true,
       dropdownItems: [
-        { label: "Mandate 1", href: "#" },
-        { label: "Mandate 2", href: "#" },
-        { label: "Mandate 3", href: "#" }
+        { label: "Mandate", href: "#" },
+        { label: "Conscent", href: "#" },
+        { label: "Permissions", href: "#" },
       ],
     },
     {
       label: "DOCUMENTS",
       hasDropdown: true,
       dropdownItems: [
-        { label: "Document 1", href: "#" },
-        { label: "Document 2", href: "#" },
-        { label: "Document 3", href: "#" }
+        { label: "Policy Documents", href: "#" },
+        { label: "Tax Certificates", href: "#" },
+        { label: "Record of Advice", href: "#" },
+        { label: "KYC", href: "#" },
+        { label: "Will", href: "#" },
+        { label: "General", href: "#" },
       ],
     },
     {
@@ -114,7 +117,7 @@ const Header = (props: Props) => {
       dropdownItems: [
         { label: "Financial Planning", href: "/financial-planning" },
         { label: "Compliance (SA)", href: "/compliance" },
-        { label: "Risk Appetite", href: "/risk-appetite" }
+        { label: "Risk Appetite", href: "/risk-appetite" },
       ],
     },
   ];
@@ -123,15 +126,16 @@ const Header = (props: Props) => {
     {
       label: "LOYALTY",
       hasDropdown: false,
-      href: "#"
+      href: "#",
     },
     {
       label: "SERVICE",
       hasDropdown: true,
       dropdownItems: [
-        { label: "Service 1", href: "#" },
-        { label: "Service 2", href: "#" },
-        { label: "Service 3", href: "#" }
+        { label: "Service Requests", href: "#" },
+        { label: "Compliments/Complaints", href: "#" },
+        { label: "Cases", href: "#" },
+        { label: "FAQ's", href: "#" },
       ],
     },
   ];
@@ -252,7 +256,10 @@ const Header = (props: Props) => {
                       <ul className="min-w-[200px] bg-white shadow-xl border border-gray-200 rounded-md overflow-hidden mt-0">
                         {item.dropdownItems?.map(
                           (dropdownItem, dropdownIndex) => (
-                            <li key={dropdownIndex}>
+                            <li
+                              key={dropdownIndex}
+                              className="border-b border-gray-100 last:border-b-0"
+                            >
                               <Link
                                 href={dropdownItem.href}
                                 className="block px-4 py-2.5 text-sm text-gray-900 hover:bg-primary hover:text-white transition-colors"
@@ -266,9 +273,12 @@ const Header = (props: Props) => {
                     </div>
                   </>
                 ) : (
-                  <button className="bg-transparent text-white hover:bg-primary-dark px-3 xl:px-4 py-3 text-xs whitespace-nowrap transition-colors">
+                  <Link
+                    href={item.href || "#"}
+                    className="bg-transparent text-white hover:bg-primary-dark px-3 xl:px-4 py-3 text-xs whitespace-nowrap transition-colors flex items-center"
+                  >
                     {item.label}
-                  </button>
+                  </Link>
                 )}
               </div>
             ))}
@@ -287,7 +297,10 @@ const Header = (props: Props) => {
                       <ul className="min-w-[200px] bg-white shadow-xl border border-gray-200 rounded-md overflow-hidden mt-0">
                         {item.dropdownItems?.map(
                           (dropdownItem, dropdownIndex) => (
-                            <li key={dropdownIndex}>
+                            <li
+                              key={dropdownIndex}
+                              className="border-b border-gray-100 last:border-b-0"
+                            >
                               <Link
                                 href={dropdownItem.href}
                                 className="block px-4 py-2.5 text-sm text-gray-900 hover:bg-primary hover:text-white transition-colors"
@@ -301,9 +314,12 @@ const Header = (props: Props) => {
                     </div>
                   </>
                 ) : (
-                  <button className="bg-transparent text-white hover:bg-primary-dark px-3 xl:px-4 py-3 text-xs whitespace-nowrap transition-colors">
+                  <Link
+                    href={item.href || "#"}
+                    className="bg-transparent text-white hover:bg-primary-dark px-3 xl:px-4 py-3 text-xs whitespace-nowrap transition-colors flex items-center"
+                  >
                     {item.label}
-                  </button>
+                  </Link>
                 )}
               </div>
             ))}
@@ -316,20 +332,18 @@ const Header = (props: Props) => {
             <div className="flex-col py-2">
               {navigationItems.map((item, index) => (
                 <div key={index}>
-                  <button
-                    className="text-white hover:bg-[#0047BB] px-4 py-3 text-sm font-medium text-left flex items-center justify-between w-full"
-                    onClick={() => {
-                      if (item.hasDropdown) {
+                  {item.hasDropdown ? (
+                    <button
+                      className="text-white hover:bg-[#0047BB] px-4 py-3 text-sm font-medium text-left flex items-center justify-between w-full"
+                      onClick={() => {
                         setMobileActiveDropdown(
                           mobileActiveDropdown === item.label
                             ? null
                             : item.label
                         );
-                      }
-                    }}
-                  >
-                    {item.label}
-                    {item.hasDropdown && (
+                      }}
+                    >
+                      {item.label}
                       <ChevronDown
                         className={`w-3 h-3 transition-transform ${
                           mobileActiveDropdown === item.label
@@ -337,8 +351,15 @@ const Header = (props: Props) => {
                             : ""
                         }`}
                       />
-                    )}
-                  </button>
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.href || "#"}
+                      className="text-white hover:bg-[#0047BB] px-4 py-3 text-sm font-medium text-left flex items-center justify-between w-full"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                   {item.hasDropdown &&
                     mobileActiveDropdown === item.label &&
                     item.dropdownItems && (
@@ -361,20 +382,18 @@ const Header = (props: Props) => {
               <div className="border-t border-[#0047BB] mt-2 pt-2">
                 {serviceItems.map((item, index) => (
                   <div key={index}>
-                    <button
-                      className="text-white hover:bg-[#0047BB] px-4 py-3 text-sm font-medium text-left w-full flex items-center justify-between"
-                      onClick={() => {
-                        if (item.hasDropdown) {
+                    {item.hasDropdown ? (
+                      <button
+                        className="text-white hover:bg-[#0047BB] px-4 py-3 text-sm font-medium text-left w-full flex items-center justify-between"
+                        onClick={() => {
                           setMobileActiveDropdown(
                             mobileActiveDropdown === item.label
                               ? null
                               : item.label
                           );
-                        }
-                      }}
-                    >
-                      {item.label}
-                      {item.hasDropdown && (
+                        }}
+                      >
+                        {item.label}
                         <ChevronDown
                           className={`w-3 h-3 transition-transform ${
                             mobileActiveDropdown === item.label
@@ -382,8 +401,15 @@ const Header = (props: Props) => {
                               : ""
                           }`}
                         />
-                      )}
-                    </button>
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href || "#"}
+                        className="text-white hover:bg-[#0047BB] px-4 py-3 text-sm font-medium text-left w-full flex items-center justify-between"
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                     {item.hasDropdown &&
                       mobileActiveDropdown === item.label &&
                       item.dropdownItems && (
