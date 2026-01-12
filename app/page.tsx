@@ -1,11 +1,10 @@
 import MainLayout from "@/components/layout/MainLayout";
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import OverView from "@/components/overview/OverView";
 
 export default function Page() {
   return (
-    <MainLayout header={<Header />} footer={<Footer />}>
+    <MainLayout header={<Header />}>
       <div className="bg-gray-100  py-10">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-6">

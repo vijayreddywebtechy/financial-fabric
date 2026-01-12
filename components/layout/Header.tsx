@@ -46,9 +46,9 @@ const Header = (props: Props) => {
       label: "PORTFOLIO",
       hasDropdown: true,
       dropdownItems: [
-        { label: "Investments", href: "#" },
-        { label: "Life Insurance", href: "#" },
-        { label: "Short Term Insurance", href: "#" },
+        { label: "Investments", href: "/portfolio-investments" },
+        { label: "Life Insurance", href: "/portfolio-insurance" },
+        { label: "Short Term Insurance", href: "/portfolio-insurance" },
       ],
     },
     {

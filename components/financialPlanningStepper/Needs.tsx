@@ -8,7 +8,7 @@ type Props = {};
 
 const Needs = (props: Props) => {
   const [selectedPrimaryGoal, setSelectedPrimaryGoal] =
-    useState<SelectOption | null>(null);
+  useState<SelectOption | null>(null);
 
   const options = [
     { value: "retirement", label: "Retirement Planning" },
