@@ -76,7 +76,7 @@ const Header = (props: Props) => {
       label: "MANAGE",
       hasDropdown: true,
       dropdownItems: [
-        { label: "Investment", href: "#" },
+        { label: "Investment", href: "/manage-investments" },
         { label: "Life Insurance", href: "#" },
         { label: "Claims", href: "#" },
         { label: "Beneficiaries", href: "#" },

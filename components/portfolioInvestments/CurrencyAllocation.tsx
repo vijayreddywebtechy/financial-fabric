@@ -32,7 +32,7 @@ const CurrencyAllocation: React.FC = () => {
       </div>
 
       {/* Horizontal Bar */}
-      <div className="flex h-12 rounded-lg overflow-hidden mb-6">
+      <div className="flex h-12 rounded-full overflow-hidden mb-6">
         {currencies.map((currency, index) => (
           <div
             key={index}
