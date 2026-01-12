@@ -730,7 +730,7 @@ const InvestmentUniverse = () => {
                     </tr>
 
                     {/* Expanded Details */}
-                    {isExpanded && fund.details && (
+                    {!isExpanded && fund.details && (
                       <tr className="bg-gray-50">
                         <td colSpan={14} className="p-6">
                           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
